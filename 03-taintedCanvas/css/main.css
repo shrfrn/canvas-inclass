@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+canvas {
+    border: 1px solid lightgray;
+}
+
+.select-img-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.select-img-container img{
+    width: 200px;
+    cursor: pointer;
+    filter: blur(.1rem);
+}
+
+.select-img-container img:hover{
+    transition: .3s;
+    filter: unset;
+}

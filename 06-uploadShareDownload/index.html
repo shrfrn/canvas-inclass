@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+
+	<body onload="init()">
+		<h1>Upload and Share Demo</h1>
+        
+        <input type="file" class="file-input btn" name="image" onchange="onImgInput(event)" accept="image/*" />
+        
+		<div class="canvas-container">
+            <canvas id="my-canvas" width="400" height="400"></canvas>
+		</div>
+        
+        <div class="inputs">
+            <a href="#" class="btn" onclick="downloadImg(this)" download="my-img.jpg">Download jpeg</a>
+            <button class="btn" onclick="onUploadImg()"> Upload to Facebook </button>
+        </div>
+		<script src="js/main.js"></script>
+		<script src="js/upload-from-local.js"></script>
+		<script src="js/sharing-on-facebook.js"></script>
+	</body>
+</html>

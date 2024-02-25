@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="css/main.css" />
+		<title>Canvas Examples</title>
+	</head>
+
+	<body onload="onInit()">
+		<h1>Drawing images on Canvas</h1>
+
+		<div class="canvas-container">
+			<h3>Container</h3>
+			<canvas width="400" height="400" onclick="drawRect(event)"></canvas>
+		</div>
+
+		<a href="#" onclick="downloadCanvas(this)" download="file-name">Download</a>
+
+        <h3>Select an image</h3>
+		<section class="select-img-container">
+			<img src="img/square.jpg" onclick="onSelectImg(this)" />
+			<img src="img/tall.jpg" onclick="onSelectImg(this)" />
+			<img src="img/wide.jpg" onclick="onSelectImg(this)" />
+		</section>
+
+		<script src="js/main.js"></script>
+	</body>
+</html>

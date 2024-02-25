@@ -1,0 +1,26 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+canvas {
+    border: 1px solid lightgray;
+}
+
+.modal {
+    position: absolute;
+
+    padding: 0.3em;
+    background-color: lightgray;
+    border: 1px solid gray;
+    border-radius: .3em;
+    
+    transition: opacity 300ms;
+    
+    text-align: center;
+    font-size: 1.3em;
+}

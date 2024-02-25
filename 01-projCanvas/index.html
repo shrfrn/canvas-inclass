@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="css/style.css" />
+		<title>Canvas Examples</title>
+	</head>
+
+	<body onload="onInit()">
+		<h1>Hello HTML Canvas</h1>
+		<canvas width="450" height="450" onclick="onDraw(event)"></canvas>
+        
+		<div class="actions">
+            <!-- <button onclick="onSetShape('triangle')">Triangle</button>
+			<button onclick="onSetShape('rect')">Rect</button>
+			<button onclick="onSetShape('text')">Text</button>
+			<button onclick="onSetShape('line')">Line</button> -->
+            <button onclick="onClearCanvas()">Clear</button>
+		</div>
+
+		<script src="js/main.js"></script>
+	</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="css/main.css" />
+		<title>Tainted Canvas</title>
+	</head>
+
+	<body onload="onInit()">
+		<h1>Tainted Canvas</h1>
+		<canvas width="400" height="400"></canvas>
+		<p>
+			<a href="#" onclick="onDownloadCanvas(this)">Download</a>
+		</p>
+        
+        <h3>Select an image</h3>
+		<section class="select-img-container">
+
+			<img title="Local img" onclick="onSelectImg(this)" src="img/dog.jpg" />
+			<img title="Img from another domain" onclick="onSelectImg(this)" src="https://cdn.pixabay.com/photo/2023/01/23/13/37/flowers-7738726_1280.jpg" />
+		</section>
+
+		<script src="js/main.js"></script>
+	</body>
+</html>
