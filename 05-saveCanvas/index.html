@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="css/style.css" />
+		<title>Save & Load</title>
+	</head>
+
+	<body onload="onInit()">
+		<h1>Save and Load</h1>
+        
+		<canvas width="450" height="450" 
+            onmousedown="onStartLine(event)"
+            onmousemove="onDrawLine(event)"
+            onmouseup="onEndLine(event)"></canvas>
+        
+		<div class="actions">
+            <button onclick="onSave()">Save</button>
+			<button onclick="onLoad()">Load</button>
+            <button onclick="onClearCanvas()">Clear</button>
+		</div>
+
+		<script src="js/services/storage.service.js"></script>
+		<script src="js/main.js"></script>
+	</body>
+</html>
