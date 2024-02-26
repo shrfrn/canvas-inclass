@@ -13,9 +13,7 @@ function onInit() {
     // drawImg2()
     // drawImg3()
 
-    window.addEventListener('resize', () => {
-        resizeCanvas()
-    })
+    window.addEventListener('resize', () => resizeCanvas())
 }
 
 function onSelectImg(elImg) {
@@ -50,9 +48,8 @@ function drawImg3() {
     
     // Let's use the image natural width and height
     
-    img.onload = () => {
+    img.onload = () => 
         gCtx.drawImage(img, 0, 0, img.naturalWidth, img.naturalHeight)
-    }
 }
 
 // Cover a fixed-width canvas using an img
