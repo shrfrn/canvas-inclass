@@ -19,8 +19,10 @@ canvas {
     border: 1px solid gray;
     border-radius: .3em;
     
+    opacity: 0;
     transition: opacity 300ms;
     
     text-align: center;
     font-size: 1.3em;
 }
+ 

@@ -9,6 +9,7 @@ function onInit() {
 }
 
 function onSelectImg(elImg) {
+    console.log(elImg.src)
 	gCtx.drawImage(elImg, 0, 0, gCanvas.width, gCanvas.height)
 }
 
