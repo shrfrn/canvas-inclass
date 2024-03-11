@@ -55,6 +55,7 @@ function drawCharts() {
 }
 
 function onMouseMove(ev) {
+	// ?const { offsetX, offsetY, pageX, pagetY } = ev
 	const { offsetX, offsetY, clientX, clientY } = ev
 
     // :TODO - find the hovered star
