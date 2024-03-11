@@ -29,25 +29,21 @@ function renderCanvas() {
 }
 
 function renderCircle() {
-	//Get the props we need from the circle
 	const { pos, color, size } = getCircle()
-
-	//Draw the circle
 	drawCircle(pos.x, pos.y, size, color)
 }
 
-//Handle the listeners
 function addListeners() {
 	addMouseListeners()
 	addTouchListeners()
-	//Listen for resize ev
+    
 	window.addEventListener('resize', () => {
 		resizeCanvas()
-		//Calc the center of the canvas
-		const center = { x: gElCanvas.width / 2, y: gElCanvas.height / 2 }
-		//Create the circle in the center
+
+        const center = { x: gElCanvas.width / 2, y: gElCanvas.height / 2 }
 		createCircle(center)
-		renderCanvas()
+
+        renderCanvas()
 	})
 }
 
@@ -65,11 +61,13 @@ function addTouchListeners() {
 
 function onDown(ev) {
 	
-	gStartPos = getEvPos(ev)        // Get the ev pos from mouse or touch
+	// Save the position we started from...
+    // Get the event position from mouse or touch
+	gStartPos = getEvPos(ev)        
+
 	if (!isCircleClicked(gStartPos)) return
 
 	setCircleDrag(true)
-	//Save the pos we start from
 	document.body.style.cursor = 'grabbing'
 }
 
@@ -78,9 +76,11 @@ function onMove(ev) {
 	if (!isDrag) return
 
 	const pos = getEvPos(ev)
+    
 	// Calc the delta, the diff we moved
 	const dx = pos.x - gStartPos.x
 	const dy = pos.y - gStartPos.y
+
 	moveCircle(dx, dy)
 
 	// Save the last pos, we remember where we`ve been and move accordingly
@@ -103,23 +103,29 @@ function resizeCanvas() {
 }
 
 function getEvPos(ev) {
-	let pos = {
-		x: ev.offsetX,
-		y: ev.offsetY,
-	}
 
 	if (TOUCH_EVENTS.includes(ev.type)) {
 		
 		ev.preventDefault()         // Prevent triggering the mouse events
 		ev = ev.changedTouches[0]   // Gets the first touch point
 
-		// Calc pos according to the touch screen
-		pos = {
+        // Calculate the touch position inside the canvas
+        
+        // ev.pageX = distance of touch position from the documents left edge
+        // target.offsetLeft = offset of the elemnt's left side from the it's parent
+        // target.clientLeft = width of the elemnt's left border
+
+		return {
 			x: ev.pageX - ev.target.offsetLeft - ev.target.clientLeft,
 			y: ev.pageY - ev.target.offsetTop - ev.target.clientTop,
 		}
-	}
-	return pos
+
+	} else {
+        return {
+            x: ev.offsetX,
+            y: ev.offsetY,
+        }
+    }
 }
 
 function drawCircle(x, y, size = 60, color = 'blue') {
